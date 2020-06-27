@@ -3,7 +3,7 @@ package zadanie2;
 import java.util.List;
 import java.util.Objects;
 
-enum Typ{
+enum Type {
     Action,Drama,Science_Ficition
 }
 public class Book {
@@ -11,14 +11,14 @@ public class Book {
     private float price;
     private int yearOfPublishment;
     private List<Author> authors;
-    private Typ typ;
+    private Type type;
 
-    public Book(String title, float price, int yearOfPublishment, List<Author> authors, Typ typ) {
+    public Book(String title, float price, int yearOfPublishment, List<Author> authors, Type type) {
         this.title = title;
         this.price = price;
         this.yearOfPublishment = yearOfPublishment;
         this.authors = authors;
-        this.typ = typ;
+        this.type = type;
     }
 
     public String getTitle() {
@@ -53,12 +53,12 @@ public class Book {
         this.authors = authors;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Type getType() {
+        return type;
     }
 
-    public void setTyp(Typ typ) {
-        this.typ = typ;
+    public void setType(Type type) {
+        this.type = type;
     }
 
     @Override
@@ -70,12 +70,12 @@ public class Book {
                 getYearOfPublishment() == book.getYearOfPublishment() &&
                 Objects.equals(getTitle(), book.getTitle()) &&
                 Objects.equals(getAuthors(), book.getAuthors()) &&
-                getTyp() == book.getTyp();
+                getType() == book.getType();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getTitle(), getPrice(), getYearOfPublishment(), getAuthors(), getTyp());
+        return Objects.hash(getTitle(), getPrice(), getYearOfPublishment(), getAuthors(), getType());
     }
 
     @Override
@@ -85,7 +85,7 @@ public class Book {
                 ", price=" + price +
                 ", yearOfPublishment=" + yearOfPublishment +
                 ", authors=" + authors +
-                ", typ=" + typ +
+                ", typ=" + type +
                 '}';
     }
 }
