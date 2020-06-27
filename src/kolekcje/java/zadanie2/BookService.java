@@ -1,7 +1,7 @@
 package zadanie2;
 
 
-
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +25,16 @@ public class BookService {
         List<Book> results = new ArrayList<>();
         for (Book book : books) {
             if (book.getType() == type) {
+                results.add(book);
+            }
+        }
+        return results;
+    }
+
+    public List<Book> findByYear(int yearOfPublishment) {
+        List<Book> results = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getYearOfPublishment() < yearOfPublishment) {
                 results.add(book);
             }
         }
