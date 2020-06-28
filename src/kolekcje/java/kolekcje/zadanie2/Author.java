@@ -1,6 +1,4 @@
-package zadanie2;
-
-import java.util.Objects;
+package kolekcje.zadanie2;
 
 public class Author {
     private String name;

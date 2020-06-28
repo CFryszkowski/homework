@@ -1,4 +1,4 @@
-package zadanie2;
+package kolekcje.zadanie2;
 
 import java.util.List;
 import java.util.Objects;

@@ -1,4 +1,4 @@
-package zadanie2;
+package kolekcje.zadanie2;
 
 
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class BookService {
         books.remove(book);
     }
 
-    public List<Book> getAll() {
+    public  List<Book> getAll() {
         return books;
     }
 
