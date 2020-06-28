@@ -1,7 +1,6 @@
 package zadanie2;
 
 
-import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,14 +30,25 @@ public class BookService {
         return results;
     }
 
-    public List<Book> findByYear(int yearOfPublishment) {
+    public List<Book> findByYear() {
         List<Book> results = new ArrayList<>();
         for (Book book : books) {
-            if (book.getYearOfPublishment() < yearOfPublishment) {
+            if (book.getYearOfPublishment() < 1999) {
                 results.add(book);
             }
         }
         return results;
     }
+
+    public Book findMostExpensiveBook (){
+        Book results = null;
+        for (Book book : books){
+            if (results==null || results.getPrice()<book.getPrice()){
+                results=book;
+            }
+        }
+        return results;
+    }
+
 
 }
