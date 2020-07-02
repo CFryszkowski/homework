@@ -2,6 +2,7 @@ package kolekcje.zadanie2;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -43,8 +44,28 @@ public class BookService {
     public Book findMostExpensiveBook (){
         Book results = null;
         for (Book book : books){
-            if (results==null || results.getPrice()<book.getPrice()){
+            if (results==null || results.getPrice() < book.getPrice()){
                 results=book;
+            }
+        }
+        return results;
+    }
+
+    public Book findCheapestBook (){
+        Book results = null;
+        for (Book book : books){
+            if (results==null|| results.getPrice() < book.getPrice()){
+                results=book;
+            }
+        }
+        return results;
+    }
+
+    public List<Book> findByNumberOfAuthors (int numberOfAuthors){
+        List<Book> results = new ArrayList<>();
+        for (Book book : books){
+            if (book.getAuthors().size() == numberOfAuthors){
+                results.add(book);
             }
         }
         return results;
